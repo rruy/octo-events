@@ -36,9 +36,17 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'Shoud create new issue when passed correct params' do
-    params = { "issue": { "action": "open", "created_at": DateTime.now } }
-    post new_issues_path(params)
+    payload = { "payload":
+                { "action": "opened",
+                  "issue": {
+                     "title": "Testing register new issue",
+                     "body": "Body of new issue",
+                     "created_at": DateTime.now
+                  }
+                }
+            }
 
-    assert_response 200
+    post new_issues_path(payload)
+    assert_response(:success)
   end
 end

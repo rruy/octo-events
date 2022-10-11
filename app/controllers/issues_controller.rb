@@ -4,8 +4,18 @@ class IssuesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def new
-    issue = params[:issue]
-    issue = Issue.create(action: issue[:action], issue_id: issue[:issue_id], created_at: issue[:created_at])
+    if params['payload'].class == ActionController::Parameters
+      payload = params['payload']
+    else
+      payload = JSON.parse(params['payload'])
+    end
+
+    issue = Issue.create(action: payload['action'],
+                         external_id: payload['issue']['id'],
+                         title: payload['issue']['title'],
+                         body: payload['issue']['body'],
+                         created_at: payload['issue']['created_at'])
+
     head issue.persisted? ? 200 : 400
   end
 
