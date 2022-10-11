@@ -24,7 +24,7 @@ Things you may want to cover:
 
 ## Use ngrok
 
-The ngrok allow you app show to internt from your Pc and run local rails running.
+The ngrok allow your app show to internet from your Pc and execute localy rails running.
 
 To install ngrok on Ubuntu:
 
