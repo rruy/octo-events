@@ -4,25 +4,25 @@ This application has objective to receiver call from webhook with origin that cr
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby version
   - Ruby 2.7.2
   - Rails 7.0.4
   - Database SQL Lite
 
-* Database creation
+## Database creation
   First Time you need run migration to create database and create tables.
   Run this command:
   ```
   rails db:drop db:create db:migrate
   ```
 
-* How to run the test suite
+## How to run the test suite
   - Execute this command 
   ```
   rails test
   ```
 
-* Use ngrok
+## Use ngrok
 
 The ngrok allow you app show to internt from your Pc and run local rails running.
 
